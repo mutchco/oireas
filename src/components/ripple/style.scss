@@ -1,0 +1,24 @@
+@import "../../style/vars";
+
+.oir_ripple {
+	position: absolute;
+	opacity: 0.4;
+	transform: scale(0);
+	border-radius: 50%;
+	background: $lightColor;
+}
+
+.oir_ripple_dark {
+	background: $darkColor;
+}
+
+.oir_ripple_open {
+	animation: ripple 0.4s linear;
+}
+
+@keyframes ripple {
+	100% {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}

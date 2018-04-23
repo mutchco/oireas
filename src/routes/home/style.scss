@@ -2,75 +2,32 @@
 @import "../../style/mixins";
 
 .oir_home {
-	height: 100%;
-}
-
-.oir_word_canvas {
-	position: absolute;
-	background: $darkColor;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-}
-
-.oir_word_rotate {
-	position: absolute;
-}
-
-.oir_word_inner {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
-.oir_word_pointer {
-	position: absolute;
-	fill: $greenColor;
-}
-
-.oir_word_content {
 	@include flexCenter;
-	position: absolute;
-	padding: 16px;
+	width: 100%;
+	height: calc(100% - 48px);
+	flex-direction: column;
+	padding: 0 8px;
+}
+
+.oir_word_column {
+	width: 100%;
+	max-width: 480px;
+	display: flex;
 	flex-direction: column;
 
-	h2 {
-		font-size: 1.3em;
+	h4:first-of-type {
+		opacity: 0.5;
+		margin: 0 0 8px 0;
 	}
 
 	p {
 		margin: 8px 0 0 0;
 	}
-
-	h2, h4, p {
-		margin: 0;
-		color: $darkColor;
-		font-family: $viewFont;
-		transition: opacity 0.2s linear;
-	}
-}
-
-.oir_word_dragging {
-
-	h2, h4, p, .oir_word_button {
-		opacity: 0;
-	}
-}
-
-.oir_word_column {
-	width: 100%;
-	max-width: 448px;
-	height: 184px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin: 32px 0 0 0;
 }
 
 .oir_word_row {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .oir_word_info {
@@ -88,6 +45,7 @@
 	border: 4px solid $darkColor;
 	cursor: pointer;
 	transition: opacity 0.2s linear;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 	svg {
 		fill: $darkColor;
@@ -96,23 +54,30 @@
 }
 
 .oir_cta_button {
-	@include flexCenter;
-	max-width: 240px;
-	height: 40px;
-	position: relative;
-	align-self: center;
-	padding: 8px 32px;
-	margin: 24px 0 0 0;
-	color: $lightColor;
-  background-color: $greenColor;
-	border-radius: 16px;
-	box-shadow: $elevation2;
-	font-family: $viewFont;
-	text-transform: uppercase;
-	cursor: pointer;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	margin: 16px 0 0 0;
+}
 
-	* {
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
+.oir_word_dragging {
+
+	h2, h4, p, .oir_word_button {
+		opacity: 0 !important;
 	}
+}
+
+@media screen and (min-width: 400px)
+	and (min-height: 400px) {
+
+		.oir_cta_button {
+			margin: 32px 0 0 0;
+		}
+}
+
+@media screen and (min-width: 768px)
+	and (min-height: 768px) {
+
+		.oir_cta_button {
+			margin: 48px 0 0 0;
+			padding: 12px 48px;
+			font-size: 1.2em;
+		}
 }

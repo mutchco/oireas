@@ -2,31 +2,30 @@
 @import "../../style/mixins";
 
 .oir_header {
-	height: 56px;
-	position: absolute;
-	top: 0;
-	left: 16px;
-	right: 16px;
+	height: 40px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
+	z-index: 20;
+	margin: 8px 0 0 0;
 
-.oir_header span {
-	color: $darkColor;
-	font-size: 24px;
-	font-family: $viewFont;
-	font-weight: 700;
-}
+	h1 {
+		margin: 0;
+		font-family: $presentationFont;
+		color: $darkColor;
+		font-size: 1.3em;
+	}
 
-.oir_header svg {
-	fill: $darkColor;
-	cursor: pointer;
-	outline: none !important;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	svg {
+		fill: $darkColor;
+		cursor: pointer;
+		outline: none !important;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
 }
 
 .oir_header_left {
+	position: relative;
 	display: flex;
 	align-items: center;
 }
@@ -40,4 +39,9 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
+}
+
+.oir_hide_refresh {
+	opacity: 0;
+	pointer-events: none;
 }

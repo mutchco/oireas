@@ -1,0 +1,143 @@
+@import "../../style/vars";
+@import "../../style/mixins";
+
+.oir_email_overlay {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.1s ease-in;
+	font-family: $viewFont;
+	z-index: 20;
+}
+
+.oir_email_overlay_open {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+}
+
+.oir_email_overlay_closed {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.oir_email_modal {
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background: $lightColor;
+	box-shadow: $elevation2;
+	border-radius: 8px;
+	transform-origin: center bottom;
+	transition: transform 0.3s ease-in;
+
+	p {
+		font-size: 12px;
+		margin: 0;
+	}
+
+	form {
+		min-height: 280px;
+		display: flex;
+		flex-direction: column;	
+		padding: 16px;
+		justify-content: center;
+		flex-grow: 1;
+
+		svg {
+			align-self: center;
+
+			path, rect {
+				fill: $greenColor;
+			}
+		}
+	}
+
+	label {
+		font-size: 14px;
+		color: $darkColor;
+		margin: 8px 0 4px 0;
+	}
+
+	textarea {
+		resize: none;
+	}
+
+	input, textarea {
+		border: none;
+		border-bottom: 2px solid $darkColor;
+		background: none;
+		outline: none !important;
+		color: $darkColor;
+		font-family: $viewFont;
+		margin: 0 0 8px 0;
+	}
+
+	button {
+		margin: 8px 0 8px 0;
+		min-height: 36px;
+	}
+}
+
+.oir_email_modal_open {
+	transform: scale(1);
+}
+
+.oir_email_modal_closed {
+	transform: scale(0);
+}
+
+.oir_email_modal::-webkit-scrollbar {
+  width: 4px;
+	background: rgba(0, 0, 0, 0);
+}
+
+.oir_email_modal::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+}
+
+.oir_email_modal::-webkit-scrollbar-thumb {
+  width: 8px;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.oir_svg_close {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	div {
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	svg {
+		fill: $fontColor;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+}
+
+.oir_modal_header {
+	padding: 32px;
+	background: $darkColor;
+	color: $fontColor;
+}
+
+.oir_error {
+	color: #e74c3c;
+}
+
+.oir_success {
+	color: $greenColor;
+	text-align: center;
+}

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=BioRhyme|Work+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,700|Pacifico');
 @import "vars";
+@import "mixins";
 
 html, body {
 	height: 100%;
@@ -15,8 +16,80 @@ html, body {
 	box-sizing: border-box;
 }
 
-#app, #outer {
+#outer {
 	height: 100%;
 	overflow: hidden;
  	position: relative;
+}
+
+.oir_route_content {
+	width: 100%;
+	height: calc(100% - 60px);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 8px;
+
+	h1, h2 {
+		margin: 0;
+		color: $darkColor;
+		font-family: $presentationFont;
+	}
+
+	h1, h2, p {
+		margin: 0 0 16px 0 !important;
+	}
+
+	h1 {
+		font-size: 2.2em;
+		text-decoration: underline;
+	}
+
+	h2 {
+		font-size: 1.6em !important;
+	}
+
+	p {
+		font-size: 1.2em !important;
+	}
+}
+
+.oir_route_content::-webkit-scrollbar {
+  width: 4px;
+	background: rgba(0, 0, 0, 0);
+}
+
+.oir_route_content::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+}
+
+.oir_route_content::-webkit-scrollbar-thumb {
+  width: 8px;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.oir_button {
+	position: relative;
+	align-self: center;
+	padding: 12px 32px;
+	color: $fontColor;;
+  background-color: $greenColor;
+	border-radius: 16px;
+	border: none;
+	box-shadow: $elevation2;
+	font-family: $viewFont;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none !important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	* {
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+
+	svg {
+		fill: $darkColor;
+	}
 }

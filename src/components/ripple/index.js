@@ -26,7 +26,8 @@ class Ripple extends Component {
 		this.ripple.style.width = diameter + 'px';
 		this.ripple.style.height = diameter + 'px';
 
-		this.parent.addEventListener('click', this.clickHandler, false);
+		// this.parent.addEventListener('click', this.clickHandler, false);
+		this.parent.onclick = this.clickHandler;
 	}
  
 	render({ dark }) {

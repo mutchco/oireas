@@ -6,6 +6,7 @@ class StyleManager {
 		const innerStyle = {};
 		const contentStyle = {};
 		const pointerStyle = { width: '24px', height: '24px' };
+		const vertical = height >= width;
 
 		innerStyle.width = diameter + 'px';
 		innerStyle.height = diameter + 'px';
@@ -19,7 +20,7 @@ class StyleManager {
 			innerStyle.top = `-${diameter - (window.innerHeight / 2)}px`;
 
 			contentStyle.width = '100%';
-			contentStyle.height = 'calc(50% - 8px)';
+			contentStyle.height = '50%';
 			contentStyle.bottom = 0;
 
 			pointerStyle.top = '50%';
@@ -32,8 +33,8 @@ class StyleManager {
 			canvasStyle.width = `50%`;
 			canvasStyle.height = '100%';
 
-			contentStyle.width = 'calc(50% - 40px)';
-			contentStyle.height = 'calc(100% - 32px)';
+			contentStyle.width = 'calc(50% - 8px)';
+			contentStyle.height = '100%';
 			contentStyle.right = 0;
 
 			innerStyle.left = '-' + (height - (width / 2)) + 'px';
@@ -49,7 +50,7 @@ class StyleManager {
 			innerStyle.transform = `rotate(${offset}deg)`
 		}
 
-		return { canvasStyle, innerStyle, contentStyle, pointerStyle };
+		return { canvasStyle, innerStyle, contentStyle, pointerStyle, vertical };
 	}
 }
 
